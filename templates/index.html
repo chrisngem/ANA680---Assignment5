@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red Wine Quality Predictor</title>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}" method="POST">
+        Enter the Following Wine Parameters on a Scale for 1 to 10:
+        <br><br>Volatile Acidity (10 = 1.6 g(acetic acid)/dm^3):  <input type="number" name="volatile_acidity"><br>
+        Citric Acid (10 = 1.0 g/dm^3):   <input type="number" name="citric_acid"><br>
+        Residual Sugar (10 = 15.5 g/dm^3):  <input type="number" name="residual_sugar"><br>
+        Total Sulfur Dioxide (10 = 289 g/dm^3):   <input type="number" name="total_sulfur_dioxide"><br>
+        Alcohol (10 = 14.9% by volume):   <input type="number" name="alcohol"><br>
+      
+        <input type=submit    value=Submit>
+   </form>
+    <br><br>Predicted Red Wine Quality (1-10): {{ predict }}
+</body>
+</html>
